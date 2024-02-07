@@ -46,10 +46,10 @@ class ImageWidget extends StatelessWidget {
   }
 
   Widget buildImage() => SizedBox.expand(
-        child: HeroWidget(
-          tag: HeroTag.image(location.imageUrl),
-          child: ClipRRect(
-            borderRadius: const BorderRadius.all(Radius.circular(8)),
+        child: ClipRRect(
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
+          child: HeroWidget(
+            tag: HeroTag.image(location.imageUrl),
             child: Image.asset(location.imageUrl, fit: BoxFit.cover),
           ),
         ),

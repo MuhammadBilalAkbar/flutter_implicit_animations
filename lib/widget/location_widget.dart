@@ -29,7 +29,10 @@ class LocationWidgetState extends State<LocationWidget> {
           bottom: isExpanded ? 40 : 100,
           width: isExpanded ? size.width * 0.8 : size.width * 0.7,
           height: isExpanded ? size.height * 0.6 : size.height * 0.5,
-          child: ExpandedContentWidget(location: widget.location),
+          child: AnimatedOpacity(
+              duration: const Duration(milliseconds: 500),
+              opacity: isExpanded ? 1 : 0.2,
+              child: ExpandedContentWidget(location: widget.location)),
         ),
         AnimatedPositioned(
           duration: const Duration(milliseconds: 500),
